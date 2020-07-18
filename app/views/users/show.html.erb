@@ -1,0 +1,9 @@
+<div>welcome <%= @user.name %> </div>
+<% if logged_in? && (current_user == @user || current_user.admin?) %>
+  <%= link_to 'edit your account', edit_user_path %>
+  <%= link_to 'close your account', user_path, method: :delete %>
+<% end %>
+
+  <br>
+  <%= link_to 'new course', new_course_path %>
+<%= link_to 'all courses', courses_path %>

@@ -1,0 +1,8 @@
+<%= link_to @topic.course.title, courses_path(@course) if @topic.course %>
+<br>
+<%= @topic.title %>
+<br>
+<% if @topic.video.attached? %>
+    <%= video_tag rails_blob_path(@topic.video), controls: true, class: "h-88 w-full" %>
+<% end %>
+<%= link_to 'edit topic', edit_topic_path %>

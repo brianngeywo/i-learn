@@ -1,0 +1,8 @@
+<br>
+<% @courses.each do |course| %>
+    <%= link_to course_path(course), :action => 'show' do %>
+    <%= course.title %>
+    <%= course.description %>
+    <% end %>
+    <br>
+<% end %>

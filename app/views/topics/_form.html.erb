@@ -1,0 +1,22 @@
+<%= form_for @topic do |f| %>
+<br>
+<div class="flex">
+    <div class="capitalize mr-6 my-4">course:</div>
+    <select name="topic[course_id]">
+        <% Course.all.each do |course| %>
+            <option value="<%= course.id %>"><%= course.title %></option>
+        <% end %>
+    </select>
+</div>
+<br>
+  <%= f.label :title, "title" %>
+  <%= f.text_field :title %>
+  <br>
+  <%= f.label :notes, "notes" %>
+  <%= f.text_area :notes, size: "60x12" %>
+  <br>
+  <%= f.label :video %>
+  <%= f.file_field :video %>
+  <br>
+  <%= f.submit "Create" %>
+<% end %>

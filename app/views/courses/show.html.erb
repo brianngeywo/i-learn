@@ -1,0 +1,23 @@
+  <% if logged_in? %>
+    <%= link_to 'log out', logout_path, method: :delete %>
+    <% else %>
+    <%= link_to 'log in', login_path %>
+    <br>
+    <%= link_to 'create an account', new_user_path %>
+  <% end %>
+<br>
+<br>
+<%= @course.title %>
+<br>
+<%= @course.description %>
+<br>
+<%= link_to 'edit course', edit_course_path %>
+<br>
+  <%= link_to 'delete course', course_path, method: :delete %>
+<br>
+  <%= link_to 'add new topic', new_topic_path %>
+<br>
+<br>
+<div>all topics</div>
+<%= render 'topics/topic', obj: @course.topics %>
+

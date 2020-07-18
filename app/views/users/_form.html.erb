@@ -1,0 +1,20 @@
+<%= form_for @user do |f| %>
+  <%= f.label :name%>
+  <%= f.text_field :name%>
+  <br>
+  <%= f.label :id_number %>
+  <%= f.text_field :id_number %>
+  <br>
+  <%= fields_for :user do |permission_fields| %>
+    are you a teacher?: <%= permission_fields.check_box :teacher %>
+  <% end %>
+<br>
+  <%= fields_for :user do |permission_fields| %>
+    or a student: <%= permission_fields.check_box :student %>
+  <% end %>
+<br>
+  <%= f.label :password %>
+  <%= f.password_field :password %>
+  <br>
+  <%= f.submit %>
+<% end %>
